@@ -1,0 +1,6 @@
+---
+# defaults file for dns
+domains: 
+  voltron-net: false
+  optimus-au: false
+  gundam-nz: false
