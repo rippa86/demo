@@ -5,6 +5,6 @@ domains:
   optimus-au: false
   gundam-nz: false
   
-voltron-net: false
-optimus-au: false
-gundam-nz: false
+voltron_net: false
+optimus_au: false
+gundam_nz: false
