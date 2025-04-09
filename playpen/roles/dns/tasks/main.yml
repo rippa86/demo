@@ -1,13 +1,13 @@
 ---
 # tasks file for dns
 - name: run my script
-  ansible.builtin.command: files/get_domains.sh
+  ansible.builtin.script: files/get_domains.sh
   register: domains_output
 
 - name: set flag
   ansible.builtin.set_fact:
     domains.voltron-net: true
-  when: domains_output.system_domain == "localdomain"
+  when: domains_output.stdout.system_domain == "localdomain"
 
 - ansible.builtin.debug:
     var: domains 
