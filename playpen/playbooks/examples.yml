@@ -3,3 +3,5 @@
   - name: Example playbook
     debug:
       msg: "I'm calling this awesome playbook from a collection {{ name }}"
+  - name: include more tasks
+    include_tasks: tasks.yml
