@@ -1,7 +1,7 @@
 - hosts: localhost
   tasks: 
   - name: Example playbook
-    anislbe.builtin.debug:
+    ansilbe.builtin.debug:
       msg: "I'm calling this awesome playbook from a collection {{ name }}"
   - name: include more tasks
-    anislbe.builtin.include_tasks: tasks.yml
+    ansilbe.builtin.include_tasks: tasks.yml
