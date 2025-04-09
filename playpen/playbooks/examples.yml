@@ -1,3 +1,5 @@
-- name: Example playbook
-  debug:
-    msg: "I'm calling this awesome playbook from a collection {{ name }}"
+- hosts: localhost
+  tasks: 
+  - name: Example playbook
+    debug:
+      msg: "I'm calling this awesome playbook from a collection {{ name }}"
