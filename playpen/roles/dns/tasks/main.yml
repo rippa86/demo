@@ -7,7 +7,7 @@
 - name: set flag
   ansible.builtin.set_fact:
     domains.voltron-net: true
-  when: domains_output.stdout.system_domain == "localdomain"
+  when: domains_output.stdout == "localdomain"
 
 - ansible.builtin.debug:
     var: domains 
