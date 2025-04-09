@@ -23,3 +23,4 @@ if [ -n "$hostname" ]; then
 fi
 
 json="${json}}"
+echo "$json"
