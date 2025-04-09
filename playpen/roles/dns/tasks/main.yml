@@ -3,8 +3,6 @@
 - name: run my script
   ansible.builtin.script: files/get_domain.sh
   register: domains_output
-- ansible.builtin.debug:
-    var: domains_output
 
 - ansible.builtin.debug:
     var: domains
@@ -12,6 +10,14 @@
 - name: set flag
   ansible.builtin.set_fact:
     domains: "{{ domains | combine({'voltron-net': true}) }}"
+  when: domains_output.stdout_lines[0] == "localdomain"
+
+- ansible.builtin.debug:
+    var: domains
+
+- name: set flag
+  ansible.builtin.set_fact:
+    domains: "{{ domains | combine({'gundam-nz': 'unicorn' }) }}"
   when: domains_output.stdout_lines[0] == "localdomain"
 
 - ansible.builtin.debug:
