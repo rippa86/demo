@@ -6,9 +6,12 @@
 - ansible.builtin.debug:
     var: domains_output
 
+- ansible.builtin.debug:
+    var: domains
+
 - name: set flag
   ansible.builtin.set_fact:
-    domains['voltron-net']: true
+    domains: "{{ domains | combine({'voltron-net': true}) }}"
   when: domains_output.stdout_lines[0] == "localdomain"
 
 - ansible.builtin.debug:
