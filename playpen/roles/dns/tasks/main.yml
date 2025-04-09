@@ -3,11 +3,13 @@
 - name: run my script
   ansible.builtin.script: files/get_domain.sh
   register: domains_output
+- ansible.builtin.debug:
+    var: domains_output
 
 - name: set flag
   ansible.builtin.set_fact:
     domains.voltron-net: true
-  when: domains_output.stdout == "localdomain"
+  when: domains_output.stdout_lines[0] == "localdomain"
 
 - ansible.builtin.debug:
     var: domains 
