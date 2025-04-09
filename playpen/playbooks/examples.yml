@@ -4,4 +4,4 @@
     ansible.builtin.debug:
       msg: "I'm calling this awesome playbook from a collection {{ name }}"
   - name: include more tasks
-    ansible.builtin.include_tasks: tasks.yml
+    ansible.builtin.include_tasks: tasks/tasks.yml
