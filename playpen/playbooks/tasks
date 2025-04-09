@@ -1,0 +1,3 @@
+- name: Example playbook
+  debug:
+    msg: "I'm calling this awesome task from a collection!"
