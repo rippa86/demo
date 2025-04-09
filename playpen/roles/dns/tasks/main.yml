@@ -9,7 +9,8 @@
 
 - name: set flag
   ansible.builtin.set_stats:
-    domains: "{{ domains | combine({'voltron-net': true}) }}"
+    data:
+      domains: "{{ domains | combine({'voltron-net': true}) }}"
   when: domains_output.stdout_lines[0] == "localdomain"
 
 - ansible.builtin.debug:
@@ -17,7 +18,8 @@
 
 - name: set flag
   ansible.builtin.set_stats:
-    domains: "{{ domains | combine({'gundam-nz': 'unicorn' }) }}"
+    data:
+      domains: "{{ domains | combine({'gundam-nz': 'unicorn' }) }}"
   when: domains_output.stdout_lines[0] == "localdomain"
 
 - ansible.builtin.debug:
